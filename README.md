@@ -32,4 +32,4 @@ chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 ![screenshot1](https://i.ibb.co/dtWmKGj/Screenshot-1.png)
 ![screenshot2](https://i.ibb.co/163Q9Mz/Screenshot-2.png)
 
-###### Este projeto foi feito inteiramente por mim, com <3, em pouco mais de 4h.
+###### Este projeto foi feito inteiramente por mim.
