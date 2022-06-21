@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from "react";
 import {
   Modal,
   ModalOverlay,
@@ -16,17 +15,15 @@ import {
   Button,
   ModalFooter,
   Flex,
-} from "@chakra-ui/react"
-
-import { Movie } from '../../models/movie'
+} from "@chakra-ui/react";
+import { Movie } from "../../models";
 
 type Props = {
-  movie: Movie
-  disclosure: UseDisclosureReturn
-}
+  movie: Movie;
+  disclosure: UseDisclosureReturn;
+};
 
-const ViewMovieDetails: React.FC<Props> = ({ movie, disclosure }) => {
-
+function ViewMovieDetails({ movie, disclosure }: Props) {
   return (
     <Modal isCentered isOpen={disclosure.isOpen} onClose={disclosure.onClose}>
       <ModalOverlay />
@@ -43,7 +40,7 @@ const ViewMovieDetails: React.FC<Props> = ({ movie, disclosure }) => {
             <Tbody>
               <Tr>
                 <Td>Adulto</Td>
-                <Td>{movie.adult ? 'Sim' : 'Não'}</Td>
+                <Td>{movie.adult ? "Sim" : "Não"}</Td>
               </Tr>
               <Tr>
                 <Td>Idioma original</Td>
@@ -57,15 +54,19 @@ const ViewMovieDetails: React.FC<Props> = ({ movie, disclosure }) => {
           </Table>
         </ModalBody>
         <ModalFooter>
-          <Flex justifyContent='center'>
-            <Button backgroundColor='blue.900' color='white' onClick={disclosure.onClose}>
+          <Flex justifyContent="center">
+            <Button
+              backgroundColor="blue.900"
+              color="white"
+              onClick={disclosure.onClose}
+            >
               Fechar
             </Button>
           </Flex>
         </ModalFooter>
       </ModalContent>
     </Modal>
-  )
+  );
 }
 
-export default ViewMovieDetails
+export default ViewMovieDetails;
