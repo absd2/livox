@@ -1,12 +1,12 @@
 # Pesquisa de filmes do TMDB
 
-## Dependências
+## Resumo
 
-Nesse projeto, utilizei as seguintes tecnologias:
+Um projeto simples baseado em realizar buscar na API de filmes do The Movie Database. Aqui, sintetizo alguns conhecimentos aplicando-os em um projeto prático utilizando as seguintes tecnologias:
 
 - React+Typescript
-- ChakraUI (criação da interface)
-- Axios para comunicação HTTP
+- ChakraUI
+- Axios
 
 ## Para executar
 
