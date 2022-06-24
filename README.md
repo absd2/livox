@@ -13,7 +13,7 @@ Nesse projeto, utilizei as seguintes tecnologias:
 Para conseguir executar esse projeto, você precisará clonar o repositório utilizando o comando:
 
 ```
-git clone https://github.com/absd2/livox.git
+https://github.com/absd2/fetch-movies.git
 ```
 
 Em seguida, é necessário instalar todas as dependências do projeto utilizando o Node Package Manager da seguinte forma:
