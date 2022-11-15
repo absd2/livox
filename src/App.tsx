@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import axios from "axios";
 import {
   Box,
@@ -20,7 +20,7 @@ function App() {
   const toast = useToast();
   const [value, setValue] = useState("");
   const [loading, setLoading] = useState(false);
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState<Movie[] | undefined>(undefined);
 
   async function searchMovies(query?: string) {
     setLoading(true);
@@ -80,7 +80,9 @@ function App() {
               placeholder="Procure por um filme..."
               variant="flushed"
               mb={4}
-              onChange={(e) => setValue(e.target.value)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                setValue(e.target.value)
+              }
               value={value}
             />
             <Spacer />
@@ -98,29 +100,29 @@ function App() {
           </Flex>
         </Box>
 
-        <Box
-          bgColor="white"
-          p={6}
-          borderRadius={4}
-          overflowY="auto"
-          boxShadow="xl"
-          w="100%"
-        >
-          {loading && (
-            <Flex mt={3} mb={3} justifyContent="center">
-              <Spinner mr={3} />
-              Pesquisando...
-            </Flex>
-          )}
+        {results && (
+          <Box
+            bgColor="white"
+            p={6}
+            borderRadius={4}
+            overflowY="auto"
+            boxShadow="xl"
+            w="100%"
+          >
+            {loading && (
+              <Flex mt={3} mb={3} justifyContent="center">
+                <Spinner mr={3} />
+                Pesquisando...
+              </Flex>
+            )}
 
-          {results.length > 0 ? (
-            results.map((result: Movie) => (
-              <MovieItem key={result.id} movie={result} />
-            ))
-          ) : (
-            <NoMovieComponent />
-          )}
-        </Box>
+            {results.length > 0 &&
+              results.map((result: Movie) => (
+                <MovieItem key={result.id} movie={result} />
+              ))}
+            {results.length === 0 && <NoMovieComponent />}
+          </Box>
+        )}
       </Flex>
     </Center>
   );
